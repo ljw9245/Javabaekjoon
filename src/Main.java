@@ -1,18 +1,16 @@
 
-import java.io.*;
-import java.util.Objects;
+import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String s = br.readLine();
-        br.close();
-        String[] arr_s = s.split(" ");
-        int count = arr_s.length;
-        if(arr_s[0]==" ") {
-            count = count-1;
-        }
-        System.out.println(arr_s[0]+"nmh");
+    public static void main(String[] args) {
+        Scanner myscanner = new Scanner(System.in);
+        int num = myscanner.nextInt();
+    }
+    boolean check(String s) {
+        boolean c = false;
+
+
+        return c;
     }
 }
 
