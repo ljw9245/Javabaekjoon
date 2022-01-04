@@ -3,18 +3,34 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner myscanner = new Scanner(System.in);
-        long a = myscanner.nextInt();
-        myscanner.close();
-        int n = 1;
-        while (a >(( n *n-n)/2) + 1) {
-            if (a > (( n *n-n)/2) + 1) {
-                n++;
+        Scanner ms = new Scanner(System.in);
+        int num_case = ms.nextInt();
+        for(int i=0 ; i<num_case;i++) {
+            int h = ms.nextInt();
+            int room = ms.nextInt();
+            int p = ms.nextInt();
+            int a = p%h;
+            int b = p/h;
+            if(h<10) {
+                if (a == 0) {
+                    a = h;
+                }
+                if (b < 10) {
+                    System.out.println(a+"0"+(b+1));
+                } else {
+                    System.out.println(a+""+(b+1));
+                }
             }
-        }
-        long q = (( n *n-n)/2) + 1;
-        if (a-q==0) {
-            System.out.println("1/"+n);
+            else {
+                if (a==0) {
+                    a = h;
+                }
+                if (b < 10) {
+                    System.out.println(a+"0"+(b+1));
+                } else {
+                    System.out.println(a+""+(b+1));
+                }
+            }
         }
     }
 }
