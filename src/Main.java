@@ -1,49 +1,29 @@
 
-import java.io.*;
-import java.util.Objects;
-import java.util.StringTokenizer;
+import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String s1 = br.readLine();
-        StringTokenizer st = new StringTokenizer(s1);
-        int num_row = Integer.parseInt(st.nextToken());
-        int num_col = Integer.parseInt(st.nextToken());
-        String[][] chess_board = new String[num_row][num_col];
-        for(int i =0 ; i<num_row;i++) {
-            String s2 = br.readLine();
-            String[] arr = s2.split("");
-            for(int j=0 ; j<num_col;j++) {
-                chess_board[i][j] = arr[j];
-            }
+    public static void main(String[] args)  {
+        Scanner ms = new Scanner(System.in);
+        int num_case = ms.nextInt();
+        int[] num_arr = new int[num_case];
+        for(int i=0;i< num_case; i++ ) {
+            num_arr[i] = ms.nextInt();
         }
-        int count =0;
-        int count1=0;
-        int count2=0;
+        Mergesort(num_arr,0,num_case);
+        for(int i=0 ; i<num_case; i++) {
+            System.out.println(num_arr[i]);
+        }
+    }
+    public  static  void Merge(int[] arr, int left, int mid, int right) {
+        int[] temp_arr = new int[arr.length];
 
-        for(int i=0 ; i<num_row;i++) {
-            for(int j =0 ; j<num_col;j++) {
-                if((i+j)%2==0) {
-                    if(!Objects.equals(chess_board[i][j], "W")) {
-                        count1++;
-                    }
-                    else {
-                        count2++;
-                    }
-                }
-                else {
-                    if(!Objects.equals(chess_board[i][j], "B")) {
-                        count1++;
-                    }
-                    else {
-                        count2++;
-                    }
-                }
-            }
-        }
-        count = Math.min(count1,count2);
-        System.out.println(count);
+    }
+    public static void Mergesort(int[] arr,int left,int right) {
+        if(left==right) return;
+        int mid = (left+right)/2;
+        Mergesort(arr,left,mid);
+        Mergesort(arr,mid+1,right);
+        Merge(arr,left,mid,right);
     }
 }
 
