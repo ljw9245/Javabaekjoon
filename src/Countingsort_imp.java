@@ -1,8 +1,8 @@
 
 import java.io.*;
 
-public class Main {
-    public static void main(String[] args) throws IOException {
+public class Countingsort_imp {
+  /*  public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int num_case = Integer.parseInt(br.readLine());
         int[] num_arr = new int[num_case];
@@ -34,6 +34,5 @@ public class Main {
         bw.write(String.valueOf(sb));
         bw.flush();
         bw.close();
-    }
+    } */
 }
-
