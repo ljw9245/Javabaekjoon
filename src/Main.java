@@ -1,18 +1,19 @@
 
-import java.util.Scanner;
+import java.io.*;
 
-public class Main {
-    public static void main(String[] args)  {
-        Scanner ms = new Scanner(System.in);
-        int num_case = ms.nextInt();
-        int[] num_arr = new int[num_case];
+public class Main{
+    public static int num_case;
+    public static int[][] ability_mat;
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        num_case = Integer.parseInt(br.readLine());
         for(int i=0; i<num_case; i++) {
-            num_arr[i] = ms.nextInt();
+            String[] s_arr = br.readLine().split(" ");
+            for(int j=0; j<num_case; j++) {
+                ability_mat[i][j] = Integer.parseInt(s_arr[j]);
+            }
         }
-        int[] num_operator = new int[4];
-        for(int i=0; i<4; i++) {
-            num_operator[i] = ms.nextInt();
-        }
-        ms.close();
+
     }
+    public static void min_distribution()
 }
